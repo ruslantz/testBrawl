@@ -1,20 +1,20 @@
 document.getElementById("input").addEventListener("input", function() {
-    if (this.value === "тест1") {
+    if (this.value === "сила") {
         document.getElementById("img1").classList.remove("hidden");
     }
-    if (this.value === "тест2") {
+    if (this.value === "скорость") {
         document.getElementById("img2").classList.remove("hidden");
     }
-    if (this.value === "тест3") {
+    if (this.value === "выносливость") {
         document.getElementById("img3").classList.remove("hidden");
     }
-    if (this.value === "тест4") {
+    if (this.value === "гибкость") {
         document.getElementById("img4").classList.remove("hidden");
     }
-    if (this.value === "тест5") {
+    if (this.value === "смелость") {
         document.getElementById("img5").classList.remove("hidden");
     }
-    if (this.value === "тест6") {
+    if (this.value === "упорство") {
         document.getElementById("img6").classList.remove("hidden");
     }
 })

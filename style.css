@@ -1,62 +1,73 @@
 body {
-    width: 1280px;
-    margin: 0 auto;
-    height: auto;
-    background-image: url(./images/background.jpg);
+  min-width: 320px;
+  margin: 0 auto;
+  height: auto;
+  background-image: url(./images/background.jpg);
 }
 
 .input {
-    display: block;
-    width: 150px;
-    margin: 0 auto;
-    margin-top: 20px;
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .main {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 100px;
-    justify-items: center;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  margin-top: 20px;
+  justify-items: center;
 }
 
 .i1 {
-    width: 350px;
-    display: block;
-    box-sizing: border-box;
+  width: 150px;
+  display: block;
+  box-sizing: border-box;
 }
 
 
+
 img {
-    max-height: 300px;
-    width: 350px;
-    display: block;
-    object-fit: contain;
+  max-height: 200px;
+  min-width: 150px;
   display: block;
+  object-fit: contain;
+  box-sizing: border-box;
   opacity: 1;
   
   animation: fadeInFromNone 2s ease-in-out;
 }
 
+@media (min-width: 768px) {
+  .i1 {
+    width: 300px;
+  }
+
+  img {
+    max-height: 400px;
+    min-width: 300px;
+  }
+}
 
 @keyframes fadeInFromNone {
-0% {
-  display: none;
-  opacity: 0;
-}
+  0% {
+    display: none;
+    opacity: 0;
+  }
 
-1% {
-  display: block;
-  opacity: 0;
-}
+  1% {
+    display: block;
+    opacity: 0;
+  }
 
-100% {
-  display: block;
-  opacity: 1;
-}
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }
 
 .hidden {
-    display: none;
+  display: block;
 }
-
