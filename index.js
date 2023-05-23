@@ -17,6 +17,10 @@ document.getElementById("input").addEventListener("input", function() {
     if (this.value === "упорство") {
         document.getElementById("img6").classList.remove("hidden");
     }
+    if (this.value === "мастер") {
+        document.getElementById("main").classList.add("hidden");
+        document.getElementById("main1").classList.remove("hidden");
+    }
 })
 
     
