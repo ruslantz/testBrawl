@@ -1,9 +1,29 @@
+const picturesContainer = document.querySelector('.pictures');
+const pictureTemplate = document.querySelector('#picture')
+  .content
+  .querySelector('.picture');
+
+const createPicture = (id) => {
+  const element = pictureTemplate.cloneNode(true);
+  const number = id
+  element.querySelector('.picture__img').src = `./images/${number+1}.png`;
+
+  return element;
+  };
+
+const renderPicture = (id) => {
+    const picturesFragment = document.createDocumentFragment();
+    picturesFragment.append(createPicture(id));
+    return picturesContainer.append(picturesFragment);
+  };
+
+
 document.getElementById("input").addEventListener("input", function() {
     if (this.value === "сила") {
-        document.getElementById("img1").classList.remove("hidden");
+        renderPicture(0);
     }
     if (this.value === "скорость") {
-        document.getElementById("img2").classList.remove("hidden");
+        renderPicture();
     }
     if (this.value === "выносливость") {
         document.getElementById("img3").classList.remove("hidden");
@@ -23,4 +43,3 @@ document.getElementById("input").addEventListener("input", function() {
     }
 })
 
-    
