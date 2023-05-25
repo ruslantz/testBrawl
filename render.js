@@ -1,3 +1,5 @@
+import {getRandomIntInclusive} from './util.js';
+import {getRandomElement} from './util.js';
 
 
 const picturesContainer = document.querySelector('.pictures');
@@ -5,16 +7,16 @@ const pictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');
 
-const createPicture = (id) => {
+const createPicture = (number) => {
   const element = pictureTemplate.cloneNode(true);
-  const number = id
-  element.querySelector('.picture__img').src = `./images/${number+1}.png`;
+  element.querySelector('.picture__img').src = `./images/${getRandomIntInclusive(1, number - 1)}.png`;
 
   return element;
   };
 
-const renderPicture = () => {
+export const renderPicture = (id) => {
     const picturesFragment = document.createDocumentFragment();
-    picturesFragment.append(createPicture);
+    picturesFragment.append(createPicture(id));
     return picturesContainer.append(picturesFragment);
   };
+

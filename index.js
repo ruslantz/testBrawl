@@ -1,29 +1,14 @@
-const picturesContainer = document.querySelector('.pictures');
-const pictureTemplate = document.querySelector('#picture')
-  .content
-  .querySelector('.picture');
-
-const createPicture = (id) => {
-  const element = pictureTemplate.cloneNode(true);
-  const number = id
-  element.querySelector('.picture__img').src = `./images/${number+1}.png`;
-
-  return element;
-  };
-
-const renderPicture = (id) => {
-    const picturesFragment = document.createDocumentFragment();
-    picturesFragment.append(createPicture(id));
-    return picturesContainer.append(picturesFragment);
-  };
+import {renderPicture} from './render.js';
+import { power } from './data.js';
 
 
 document.getElementById("input").addEventListener("input", function() {
+    const picture = Array.from({ length: getRandomIntInclusive(1, COMMENTS_COUNT)}, (_, commentId) => createComment(commentId + 1));;
     if (this.value === "сила") {
-        renderPicture(0);
+        renderPicture(number);
     }
     if (this.value === "скорость") {
-        renderPicture();
+        renderPicture(number);
     }
     if (this.value === "выносливость") {
         document.getElementById("img3").classList.remove("hidden");
