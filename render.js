@@ -1,15 +1,11 @@
-import {getRandomIntInclusive} from './util.js';
-import {getRandomElement} from './util.js';
-
-
 const picturesContainer = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');
 
-const createPicture = (number) => {
+const createPicture = (picture) => {
   const element = pictureTemplate.cloneNode(true);
-  element.querySelector('.picture__img').src = `./images/${getRandomIntInclusive(1, number - 1)}.png`;
+  element.querySelector('.picture__img').src = picture.url;
 
   return element;
   };

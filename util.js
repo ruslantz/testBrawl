@@ -9,3 +9,4 @@ export const getRandomIntInclusive = (a, b) => {
     return Math.round(Math.random() * (max - min + 1)) + min;
   };
   
+  export const getRandomElement = (element) => element[getRandomIntInclusive(0, element.length - 1)];
