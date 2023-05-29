@@ -1,3 +1,5 @@
+import { USED } from './data.js';
+
 const picturesContainer = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture')
   .content

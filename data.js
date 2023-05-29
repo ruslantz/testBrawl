@@ -11,6 +11,9 @@ const POWER = [
     "упорство"
 ];
 
+export const USED = [];
+console.log(USED)
+
 export const QUANTITY = POWER.length
 
 const createPicture = (id) => {

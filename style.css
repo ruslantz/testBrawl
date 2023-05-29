@@ -20,6 +20,11 @@ body {
   gap: 40px;
   margin-top: 20px;
   justify-items: center;
+  padding: 0 20px;
+}
+
+.main:last-child {
+  column-gap: 0;
 }
 
 .i1 {
@@ -49,6 +54,10 @@ img {
   img {
     max-height: 400px;
     min-width: 300px;
+  }
+
+  .main {
+    padding: 0 80px;
   }
 }
 
