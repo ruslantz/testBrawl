@@ -1,15 +1,14 @@
-import {renderPicture} from './render.js';
-import { createPictures } from './data.js';
-import { QUANTITY } from './data.js';
-import { USED } from './data.js';
+import { USED, POWER } from './data.js';
 
-const pictures = createPictures(QUANTITY);
 
-document.getElementById("input").addEventListener("input", function() {
-    let element = pictures.find(item => item.power === this.value);
-    // if (USED.find(item => item.power === this.value))
-    renderPicture(element);
-    USED.push("fdfd");
-})
-
-// if (this.value ===)
+document.getElementById("input").addEventListener("input", function () {
+    if (POWER.includes(this.value)) {
+        if (USED.includes(this.value)) {
+            console.log("Слово повторяется: ");
+        } else {
+            USED.push(this.value);
+            console.log("Слово найдено: ");
+        }
+    }
+}
+)

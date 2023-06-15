@@ -2,7 +2,7 @@ import { getRandomElement } from "./util.js";
 import {getRandomIntInclusive} from './util.js';
 
 
-const POWER = [
+export const POWER = [
     "сила",
     "скорость",
     "гибкость",
