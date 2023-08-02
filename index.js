@@ -25,12 +25,13 @@ window.onload = function () {
 };
 
 document.getElementById("input").addEventListener("input", function () {
-    let element = pictures.find(item => item.power === this.value);
-    if (POWER.includes(this.value)) {
-        if (USED.includes(this.value)) {
+    const inputValue = this.value.toLowerCase(); 
+    let element = pictures.find(item => item.power === inputValue);
+    if (POWER.includes(inputValue)) {
+        if (USED.includes(inputValue)) {
             console.log("Слово повторяется: ");
         } else {
-            USED.push(this.value);
+            USED.push(inputValue);
             console.log("Слово найдено: ");
             renderPicture(element);
             // Сохраняем данные в локальное хранилище после каждого изменения
