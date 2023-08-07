@@ -3,6 +3,7 @@ body {
   margin: 0 auto;
   height: auto;
   background-image: url(./images/background.jpg);
+  background-size: cover;
 }
 
 .input {
@@ -16,11 +17,10 @@ body {
 .main {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   margin-top: 20px;
   justify-items: center;
-  padding: 0 20px;
 }
 
 .main:last-child {
@@ -29,8 +29,9 @@ body {
 
 .i1 {
   width: 150px;
-  display: block;
+  display: flex;
   box-sizing: border-box;
+  align-items: center;
 }
 
 
