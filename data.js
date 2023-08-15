@@ -1,5 +1,3 @@
-import { getRandomElement } from "./util.js";
-import {getRandomIntInclusive} from './util.js';
 
 
 export const POWER = [
@@ -32,5 +30,29 @@ const createPicture = (id) => {
         power: POWER[id-1]
     };
 };
+export const dailyExercises = [];
+
+let repetitions = 8;
+for (let day = 1; day <= QUANTITY; day++) {
+  const tasks = [
+    "Растяжка",
+    `Отжимания от пола (${repetitions} раз)`,
+    `Качаем пресс (${repetitions} раз)`,
+    `Приседания (${repetitions} раз)`,
+    `Прыжки на месте (${repetitions} раз)`,
+    `Касание пальцами ног (${repetitions} раз)`
+  ];
+
+  dailyExercises.push({
+    day: day,
+    tasks: tasks
+  });
+
+  if (day % 2 === 0) {
+    repetitions += 1;
+  }
+}
+
+console.log(dailyExercises)
 
 export const createPictures = (quantity) => Array.from({ length: quantity }, (_, pictureId) => createPicture(pictureId + 1));
