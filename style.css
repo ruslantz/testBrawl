@@ -16,6 +16,15 @@ body {
 
 .main {
   height: 100%;
+}
+
+.task-container {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pictures {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;

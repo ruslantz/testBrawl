@@ -1,8 +1,8 @@
 import { USED, POWER } from './data.js';
 import { QUANTITY } from './data.js';
-import { renderPicture, restoreDataFromLocalStorageHTML } from './render.js';
-import { createPictures } from './data.js';
-
+import { renderPicture, restoreDataFromLocalStorageHTML, picturesContainer } from './render.js';
+import { createPictures, dailyExercises } from './data.js';
+import { renderTask, taskContainer } from './renderTask.js';
 // Функция для сохранения данных в локальное хранилище
 function saveDataToLocalStorage() {
     localStorage.setItem("usedWords", JSON.stringify(USED));
@@ -22,20 +22,33 @@ const pictures = createPictures(QUANTITY);
 window.onload = function () {
     restoreDataFromLocalStorage();
     restoreDataFromLocalStorageHTML();
+
 };
 
+let currentDayIndex = 0; // Индекс текущего дня
 document.getElementById("input").addEventListener("input", function () {
     const inputValue = this.value.toLowerCase(); 
+    let firstDayTask = dailyExercises[0];
     let element = pictures.find(item => item.power === inputValue);
-    if (POWER.includes(inputValue)) {
-        if (USED.includes(inputValue)) {
-            console.log("Слово повторяется: ");
-        } else {
-            USED.push(inputValue);
-            console.log("Слово найдено: ");
-            renderPicture(element);
-            // Сохраняем данные в локальное хранилище после каждого изменения
-            saveDataToLocalStorage();
+    if (inputValue === "старт") {
+        localStorage.clear();
+        picturesContainer.innerHTML = '';
+        taskContainer.innerHTML = '';
+        renderTask(firstDayTask);
+     } else {
+        if (POWER.includes(inputValue)) {
+            if (USED.includes(inputValue)) {
+                console.log("Слово повторяется: ");
+            } else {
+                USED.push(inputValue);
+                console.log("Слово найдено: ");
+                renderPicture(element);
+                taskContainer.innerHTML = '';
+                currentDayIndex++;
+                renderTask(dailyExercises[currentDayIndex]);
+                // Сохраняем данные в локальное хранилище после каждого изменения
+                saveDataToLocalStorage();
+            }
         }
     }
 });

@@ -11,14 +11,25 @@
 
 <body>
     <input id="input" class="input" type="text" value="" placeholder="Введи код">
-    <div id="main" class="pictures main">
-    </div>
+    <main class="main">
+        <div id="task-container" class="task-container">
+        </div>
+        <div id="pictures" class="pictures">
+        </div>
+        <div id="main1" class="hidden">
+            <img id="master" src="./images/5.png">
+        </div>
+
+    </main>
 
     <template id="picture">
         <div class="i1 picture">
             <img class="picture__img" src="" alt="">
-            <span class="day"></span>
-            <span class="ex"></span>
+        </div>
+    </template>
+    <template id="task">
+        <div class="task_day">
+            <h1 class="day"></h1>
         </div>
     </template>
 
