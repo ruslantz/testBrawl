@@ -1,4 +1,4 @@
-const picturesContainer = document.querySelector('.pictures');
+export const picturesContainer = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');

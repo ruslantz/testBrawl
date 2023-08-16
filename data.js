@@ -48,9 +48,9 @@ for (let day = 1; day <= QUANTITY; day++) {
     tasks: tasks
   });
 
-  if (day % 2 === 0) {
-    repetitions += 1;
-  }
+  repetitions ++;
+  // if (day % 2 === 0) {
+  // }
 }
 
 console.log(dailyExercises)

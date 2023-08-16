@@ -1,11 +1,19 @@
-const taskContainer = document.querySelector('.task-container');
+export const taskContainer = document.querySelector('.task-container');
 const taskTemplate = document.querySelector('#task')
   .content
   .querySelector('.task_day');
 
-  export const createTask = (task) => {
+  export const createTask = (taskData) => {
   const element = taskTemplate.cloneNode(true);
-  element.querySelector('.day').textContent = `День: ${task.day}`;
+  element.querySelector('.day').textContent = `День: ${taskData.day}`;
+
+  const tasksList = document.createElement("ul");
+  for (const task of taskData.tasks) {
+    const taskItem = document.createElement("li");
+    taskItem.textContent = task;
+    tasksList.appendChild(taskItem);
+    element.appendChild(tasksList);
+  };
 
   return element;
 };
