@@ -1,9 +1,22 @@
+@font-face {
+  font-family: "Minecraft Ten";
+  src: url("/fonts/mine.ttf") format("truetype");
+  /* Можете добавить другие форматы, например, woff и woff2, для лучшей поддержки браузеров */
+}
+
+
 body {
   min-width: 320px;
   margin: 0 auto;
   height: auto;
   background-image: url(./images/background.jpg);
-  background-size: cover;
+  background-position: center center; 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  height: 100%;
+  background-attachment: fixed;
+  padding-top: 20px;
+  font-family: "Minecraft Ten", sans-serif;
 }
 
 .input {
@@ -12,21 +25,48 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   font-size: 20px;
+  
 }
 
 .main {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .task-container {
   width: 300px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  padding-top: 0;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 30px;
+  box-sizing: border-box;
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
 }
+
+.day {
+  margin: 5px auto;
+}
+ 
+.task_day ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
 
 .pictures {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 40px;
   margin-top: 20px;
   justify-items: center;
@@ -41,6 +81,15 @@ body {
   display: flex;
   box-sizing: border-box;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 10px;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 30px;
+  box-sizing: border-box;
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
 }
 
 
@@ -57,6 +106,13 @@ img {
 }
 
 @media (min-width: 768px) {
+  .task-container {
+    width: 600px;
+  }
+  .pictures {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
   .i1 {
     width: 300px;
   }
