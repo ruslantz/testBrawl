@@ -2,7 +2,7 @@ import { USED, POWER } from './data.js';
 import { QUANTITY } from './data.js';
 import { renderPicture, restoreDataFromLocalStorageHTML, picturesContainer } from './render.js';
 import { createPictures, dailyExercises } from './data.js';
-import { renderTask, taskContainer } from './renderTask.js';
+import { renderTask, taskContainer, restoreDataTaskFromLocalStorageHTML } from './renderTask.js';
 // Функция для сохранения данных в локальное хранилище
 function saveDataToLocalStorage() {
     localStorage.setItem("usedWords", JSON.stringify(USED));
@@ -22,6 +22,7 @@ const pictures = createPictures(QUANTITY);
 window.onload = function () {
     restoreDataFromLocalStorage();
     restoreDataFromLocalStorageHTML();
+    restoreDataTaskFromLocalStorageHTML()
 
 };
 
@@ -31,10 +32,12 @@ document.getElementById("input").addEventListener("input", function () {
     let firstDayTask = dailyExercises[0];
     let element = pictures.find(item => item.power === inputValue);
     if (inputValue === "старт") {
+        USED.length = 0;
         localStorage.clear();
         picturesContainer.innerHTML = '';
         taskContainer.innerHTML = '';
         renderTask(firstDayTask);
+
      } else {
         if (POWER.includes(inputValue)) {
             if (USED.includes(inputValue)) {
