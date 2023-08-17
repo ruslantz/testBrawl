@@ -22,5 +22,6 @@ export const renderTask = (id) => {
   const taskFragment = document.createDocumentFragment();
   taskFragment.append(createTask(id));
   taskContainer.append(taskFragment);
+  taskContainer.classList.remove('hidden');
 
 };

@@ -3,9 +3,14 @@ const pictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');
 
+let orderValue = 0; // Начальное значение для order
+
 export const createPicture = (picture) => {
   const element = pictureTemplate.cloneNode(true);
   element.querySelector('.picture__img').src = picture.url;
+  element.style.order = orderValue; // Применяем значение order
+
+  orderValue--; // Уменьшаем значение для следующего элемента
 
   return element;
 };
