@@ -35,7 +35,6 @@ export const restoreDataFromLocalStorageHTML = () => {
   const picturesHTML = localStorage.getItem("savedPicturesHTML");
   if (picturesHTML) {
     picturesContainer.innerHTML = picturesHTML;
+    console.log("Restored picture HTML:", picturesHTML);
   }
 }
-
-

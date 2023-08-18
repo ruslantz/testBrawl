@@ -36,5 +36,8 @@ export const restoreDataTaskFromLocalStorageHTML = () => {
   const taskHTML = localStorage.getItem("savedTaskHTML");
   if (taskHTML) {
     taskContainer.innerHTML = taskHTML;
+    console.log("Restored task HTML:", taskHTML);
+  } else {
+    console.log("No saved task HTML found.");
   }
-}
+};

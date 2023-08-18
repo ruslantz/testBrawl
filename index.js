@@ -18,13 +18,23 @@ function restoreDataFromLocalStorage() {
 
 const pictures = createPictures(QUANTITY);
 
-// Восстанавливаем данные из локального хранилища при загрузке страницы
+// Восстанавливаем значение currentDayIndex из локального хранилища при загрузке страницы
 window.onload = function () {
+    // Восстановление данных из локального хранилища для других компонентов (эти функции определены в других файлах)
     restoreDataFromLocalStorage();
     restoreDataFromLocalStorageHTML();
-    restoreDataTaskFromLocalStorageHTML()
+    restoreDataTaskFromLocalStorageHTML();
 
+    // Получаем сохраненное значение currentDayIndex из локального хранилища
+    const savedCurrentDayIndex = localStorage.getItem("currentDayIndex");
+    
+    // Проверяем, было ли сохранено значение в хранилище (если не было, savedCurrentDayIndex будет null)
+    if (savedCurrentDayIndex !== null) {
+        // Если значение было сохранено, преобразуем его в число и присваиваем переменной currentDayIndex
+        currentDayIndex = parseInt(savedCurrentDayIndex);
+    }
 };
+
 
 let currentDayIndex = 0; // Индекс текущего дня
 document.getElementById("input").addEventListener("input", function () {
@@ -36,6 +46,7 @@ document.getElementById("input").addEventListener("input", function () {
         localStorage.clear();
         picturesContainer.innerHTML = '';
         taskContainer.innerHTML = '';
+        currentDayIndex = 0;
         renderTask(firstDayTask);
 
      } else {
@@ -50,6 +61,7 @@ document.getElementById("input").addEventListener("input", function () {
                 currentDayIndex++;
                 renderTask(dailyExercises[currentDayIndex]);
                 // Сохраняем данные в локальное хранилище после каждого изменения
+                localStorage.setItem("currentDayIndex", currentDayIndex.toString());
                 saveDataToLocalStorage();
             }
         }
