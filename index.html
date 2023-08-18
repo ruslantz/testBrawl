@@ -11,22 +11,22 @@
 </head>
 
 <body>
-    <div class="background-container"></div>
-  <div class="content">
-    <img class="logo" src="./images/logo.png" width="300">
-    <main class="main">
-        <div id="task-container" class="task-container">
-            <span class="start">Привет! Напиши "старт" и начинай!</span>
+    <div class="container">
+        <img class="logo" src="./images/logo.png" width="300">
+        <div class="content">
+            <main class="main">
+                <div id="task-container" class="task-container">
+                    <span class="start">Привет! Напиши "старт" и начинай!</span>
+                </div>
+                <input id="input" class="input" type="text" value="" placeholder="Введи код">
+                <div id="pictures" class="pictures">
+                </div>
+                <div id="main1" class="hidden">
+                    <img id="master" src="./images/5.png">
+                </div>
+            </main>
         </div>
-        <input id="input" class="input" type="text" value="" placeholder="Введи код">
-        <div id="pictures" class="pictures">
-        </div>
-        <div id="main1" class="hidden">
-            <img id="master" src="./images/5.png">
-        </div>
-
-    </main>
-  </div>
+    </div>
 
     <template id="picture">
         <div class="i1 picture">
@@ -41,8 +41,6 @@
     </template>
 
     <script src="index.js" type="module"></script>
-
-
 </body>
 
 </html>
