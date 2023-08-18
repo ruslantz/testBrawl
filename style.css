@@ -17,6 +17,20 @@ body {
   background-attachment: fixed;
   padding-top: 20px;
   font-family: "Minecraft Ten", sans-serif;
+  position: relative;
+}
+
+
+.logo {
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.start {
+  font-size: 30px;
 }
 
 .input {
@@ -32,6 +46,8 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  margin-top: 100px;
 }
 
 .task-container {
@@ -106,6 +122,9 @@ img {
 }
 
 @media (min-width: 768px) {
+  .logo {
+    width: 700px;
+  }
   .task-container {
     width: 600px;
   }
@@ -124,6 +143,7 @@ img {
 
   .main {
     padding: 0 80px;
+    margin-top: 250px;
   }
 }
 
