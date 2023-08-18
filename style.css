@@ -31,22 +31,6 @@ body {
 }
 
 
-body {
-  min-width: 320px;
-  margin: 0 auto;
-  height: auto;
-  background-image: url(./images/background.jpg);
-  background-position: center center; 
-  background-size: cover; 
-  background-repeat: no-repeat;
-  height: 100%;
-  background-attachment: fixed;
-  padding-top: 20px;
-  font-family: "Minecraft Ten", sans-serif;
-  position: relative;
-}
-
-
 .logo {
   width: 300px;
   position: fixed;
