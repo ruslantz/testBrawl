@@ -26,7 +26,7 @@ const createPicture = (id) => {
     // Создает массив комментариев
     return {
         id,
-        url: (id === 13) ? `./images/${id}.gif` : `./images/${id}.webp`,
+        url: (id === 13) ? `./images/${id}.gif` : `./images/${id}.png`,
         power: POWER[id-1]
     };
 };
