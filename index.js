@@ -17,6 +17,8 @@ function restoreDataFromLocalStorage() {
 }
 
 const pictures = createPictures(QUANTITY);
+console.log(pictures)
+
 
 // Восстанавливаем значение currentDayIndex из локального хранилища при загрузке страницы
 window.onload = function () {
@@ -41,14 +43,17 @@ document.getElementById("input").addEventListener("input", function () {
     const inputValue = this.value.toLowerCase(); 
     let firstDayTask = dailyExercises[0];
     let element = pictures.find(item => item.power === inputValue);
-    if (inputValue === "старт") {
+    if (inputValue === "старт" || inputValue === "чемпион") {
         USED.length = 0;
         localStorage.clear();
         picturesContainer.innerHTML = '';
         taskContainer.innerHTML = '';
         currentDayIndex = 0;
-        renderTask(firstDayTask);
-
+        if (inputValue === "чемпион") {
+            renderPicture(element);
+          } else {
+            renderTask(firstDayTask);
+          }
      } else {
         if (POWER.includes(inputValue)) {
             if (USED.includes(inputValue)) {
