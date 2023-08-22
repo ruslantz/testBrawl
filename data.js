@@ -14,7 +14,8 @@ export const POWER = [
     "хитрость",
     "помощь",
     "техника",
-    "упорство"
+    "упорство",
+    "чемпион"
 ];
 
 export const USED = [];
@@ -24,23 +25,23 @@ export const QUANTITY = POWER.length
 
 const createPicture = (id) => {
     // Создает массив комментариев
+    const power = POWER[id - 1]; // Получаем значение power из массива POWER
     return {
-        id,
-        url: (id === 13) ? `./images/${id}.gif` : `./images/${id}.png`,
-        power: POWER[id-1]
+      id,
+      power: power,
+      url: (id === 13) ? `./images/${id}.gif` : ((power === "чемпион") ? './images/champ.png' : `./images/${id}.png`)
     };
-};
+  };
 export const dailyExercises = [];
 
 let repetitions = 8;
 for (let day = 1; day <= QUANTITY; day++) {
   const tasks = [
-    "Растяжка",
+    "Разминка, растяжка",
     `Отжимания от пола (${repetitions} раз)`,
     `Качаем пресс (${repetitions} раз)`,
     `Приседания (${repetitions} раз)`,
     `Прыжки на месте (${repetitions} раз)`,
-    `Касание пальцами ног (${repetitions} раз)`
   ];
 
   dailyExercises.push({

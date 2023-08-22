@@ -4,16 +4,17 @@
   /* Можете добавить другие форматы, например, woff и woff2, для лучшей поддержки браузеров */
 }
 
-
-
+/* Оставьте body без фонового изображения */
 body {
   min-width: 320px;
   margin: 0;
   padding: 0;
   font-family: "Minecraft Ten", sans-serif;
+  /* overflow: hidden; Запрещаем прокрутку страницы */
 }
 
-.background-container {
+body::before {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
@@ -26,17 +27,24 @@ body {
   background-repeat: no-repeat;
 }
 
-.content {
-  padding: 20px;
+/* Оберните логотип и контент в отдельные контейнеры */
+.container {
+  position: relative;
 }
-
 
 .logo {
   width: 300px;
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
+  z-index: 1; /* Поднимаем логотип над фоном */
+}
+
+.content {
+  padding: 20px;
+  position: relative; /* Добавьте позиционирование для контента */
+  z-index: 2; /* Поднимаем контент над фоном */
 }
 
 .start {
